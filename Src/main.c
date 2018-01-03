@@ -44,12 +44,13 @@
 #include "tim.h"
 #include "usart.h"
 #include "gpio.h"
-#include "MPU6500.h"
+
 /* USER CODE BEGIN Includes */
 #define PUTCHAR_PROTOTYPE int fputc(int ch, FILE *f)
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <MPU6500.h>
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
@@ -118,10 +119,11 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-  /* USER CODE END WHILE */
 		printf("%d\t%d\t%d\r\n",(MPU6500_read(0x4300)<<8)+MPU6500_read(0x4400)+10000
-		,(MPU6500_read(0x4500)<<8)+MPU6500_read(0x4600)+10000,(MPU6500_read(0x4700)<<8)+MPU6500_read(0x4800)+10000); 
-	/* USER CODE BEGIN 3 */
+		,(MPU6500_read(0x4500)<<8)+MPU6500_read(0x4600)+10000,(MPU6500_read(0x4700)<<8)+MPU6500_read(0x4800)+10000);
+  /* USER CODE END WHILE */
+
+  /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
 

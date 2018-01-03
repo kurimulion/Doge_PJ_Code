@@ -60,7 +60,7 @@ void MPU6500_Configuration(){
 	MPU6500_write( 0x1700, 0x7F ); 
 	MPU6500_write( 0x1800, 0xFF ); 
 
-	SPI_Configuration(SPI_BAUDRATEPRESCALER_4);	//Set PCLK1 = 42Mhz / 2 = 21Mhz
+	SPI_Configuration(SPI_BAUDRATEPRESCALER_8);	//Set PCLK1 = 84Mhz / 8 = 10.5Mhz
 	__HAL_SPI_ENABLE(&hspi1);
 	
 	MPU6500_delay_EN=DISABLE;

@@ -1,7 +1,7 @@
 [PreviousGenFiles]
-HeaderPath=C:/Users/Jerry/Desktop/Doge_PJ_Code/Inc
+HeaderPath=C:/Users/Quanta/Downloads/Doge_PJ_CodeM/Doge_PJ_Code/Inc
 HeaderFiles=stm32f4xx_it.h;stm32f4xx_hal_conf.h;main.h;gpio.h;i2c.h;spi.h;tim.h;usart.h;
-SourcePath=C:/Users/Jerry/Desktop/Doge_PJ_Code/Src
+SourcePath=C:/Users/Quanta/Downloads/Doge_PJ_CodeM/Doge_PJ_Code/Src
 SourceFiles=stm32f4xx_it.c;stm32f4xx_hal_msp.c;main.c;gpio.c;i2c.c;spi.c;tim.c;usart.c;
 
 [PreviousLibFiles]

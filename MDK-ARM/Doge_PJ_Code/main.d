@@ -39,7 +39,7 @@ doge_pj_code\main.o: ../Inc/spi.h
 doge_pj_code\main.o: ../Inc/tim.h
 doge_pj_code\main.o: ../Inc/usart.h
 doge_pj_code\main.o: ../Inc/gpio.h
-doge_pj_code\main.o: ../Inc/MPU6500.h
-doge_pj_code\main.o: ../Inc/short_type.h
 doge_pj_code\main.o: H:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 doge_pj_code\main.o: H:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+doge_pj_code\main.o: ../Inc/MPU6500.h
+doge_pj_code\main.o: ../Inc/short_type.h
