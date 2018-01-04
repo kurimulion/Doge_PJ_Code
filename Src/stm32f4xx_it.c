@@ -204,8 +204,8 @@ void RCC_IRQHandler(void)
 void TIM1_UP_TIM10_IRQHandler(void)
 {
   /* USER CODE BEGIN TIM1_UP_TIM10_IRQn 0 */
-//printf("%d\t%d\t%d\r\n",(MPU6500_read(0x4300)<<8)+MPU6500_read(0x4400)+10000
-//,(MPU6500_read(0x4500)<<8)+MPU6500_read(0x4600)+10000,(MPU6500_read(0x4700)<<8)+MPU6500_read(0x4800)+10000);
+//	printf("%d\t%d\t%d\r\n",(MPU6500_read(0x4300)<<8)+MPU6500_read(0x4400)+10000
+//	,(MPU6500_read(0x4500)<<8)+MPU6500_read(0x4600)+10000,(MPU6500_read(0x4700)<<8)+MPU6500_read(0x4800)+10000);
 	printf("%d\t%d\t%d\r\n",(MPU6500_read(0x3B00)<<8)+MPU6500_read(0x3C00)+10000
 	,(MPU6500_read(0x3D00)<<8)+MPU6500_read(0x3E00)+10000,(MPU6500_read(0x3F00)<<8)+MPU6500_read(0x4000)+10000);
   /* USER CODE END TIM1_UP_TIM10_IRQn 0 */

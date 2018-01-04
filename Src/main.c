@@ -56,7 +56,7 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-extern TIM_HandleTypeDef htim10;
+extern TIM_HandleTypeDef htim10, htim11;
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE END PV */
@@ -106,13 +106,14 @@ int main(void)
   MX_I2C1_Init();
   MX_SPI1_Init();
   MX_TIM5_Init();
-// MX_TIM11_Init();
+  MX_TIM11_Init();
   MX_USART1_UART_Init();
   MX_USART2_UART_Init();
   MX_TIM10_Init();
 
   /* USER CODE BEGIN 2 */
-	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_9|GPIO_PIN_1, GPIO_PIN_SET);
+	HAL_TIM_PWM_Start(&htim11, TIM_CHANNEL_1);
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_SET);
 	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_RESET);
 	MPU6500_Configuration();
 	HAL_TIM_Base_Start_IT(&htim10);
