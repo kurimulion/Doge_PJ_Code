@@ -23,7 +23,7 @@ void MPU6500_Configuration(){
 	Resrt  DMP , FIFO , I2C_MST , SIG_COND
 	Set SPI interface only
 	****************************************/
-	MPU6500_write(MPU6500_USER_CTRL,0x1D); 
+	MPU6500_write(MPU6500_USER_CTRL,0x1F); 
 
 	//check communication 
 	while(MPU6500_read(MPU6500_WHOAMI)!=0x0070){
