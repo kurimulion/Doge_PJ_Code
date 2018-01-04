@@ -36,11 +36,12 @@
 #include "stm32f4xx_it.h"
 
 /* USER CODE BEGIN 0 */
-
+#include "MPU6500.h"
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
 extern SPI_HandleTypeDef hspi1;
+extern TIM_HandleTypeDef htim10;
 
 /******************************************************************************/
 /*            Cortex-M4 Processor Interruption and Exception Handlers         */ 
@@ -195,6 +196,23 @@ void RCC_IRQHandler(void)
   /* USER CODE BEGIN RCC_IRQn 1 */
 
   /* USER CODE END RCC_IRQn 1 */
+}
+
+/**
+* @brief This function handles TIM1 update interrupt and TIM10 global interrupt.
+*/
+void TIM1_UP_TIM10_IRQHandler(void)
+{
+  /* USER CODE BEGIN TIM1_UP_TIM10_IRQn 0 */
+//printf("%d\t%d\t%d\r\n",(MPU6500_read(0x4300)<<8)+MPU6500_read(0x4400)+10000
+//,(MPU6500_read(0x4500)<<8)+MPU6500_read(0x4600)+10000,(MPU6500_read(0x4700)<<8)+MPU6500_read(0x4800)+10000);
+	printf("%d\t%d\t%d\r\n",(MPU6500_read(0x3B00)<<8)+MPU6500_read(0x3C00)+10000
+	,(MPU6500_read(0x3D00)<<8)+MPU6500_read(0x3E00)+10000,(MPU6500_read(0x3F00)<<8)+MPU6500_read(0x4000)+10000);
+  /* USER CODE END TIM1_UP_TIM10_IRQn 0 */
+  HAL_TIM_IRQHandler(&htim10);
+  /* USER CODE BEGIN TIM1_UP_TIM10_IRQn 1 */
+
+  /* USER CODE END TIM1_UP_TIM10_IRQn 1 */
 }
 
 /**

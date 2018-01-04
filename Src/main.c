@@ -56,6 +56,7 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
+extern TIM_HandleTypeDef htim10;
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE END PV */
@@ -105,22 +106,22 @@ int main(void)
   MX_I2C1_Init();
   MX_SPI1_Init();
   MX_TIM5_Init();
-//  MX_TIM11_Init();
+// MX_TIM11_Init();
   MX_USART1_UART_Init();
   MX_USART2_UART_Init();
+  MX_TIM10_Init();
 
   /* USER CODE BEGIN 2 */
 	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_9|GPIO_PIN_1, GPIO_PIN_SET);
 	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_RESET);
 	MPU6500_Configuration();
+	HAL_TIM_Base_Start_IT(&htim10);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-		printf("%d\t%d\t%d\r\n",(MPU6500_read(0x4300)<<8)+MPU6500_read(0x4400)+10000
-		,(MPU6500_read(0x4500)<<8)+MPU6500_read(0x4600)+10000,(MPU6500_read(0x4700)<<8)+MPU6500_read(0x4800)+10000);
   /* USER CODE END WHILE */
 
   /* USER CODE BEGIN 3 */

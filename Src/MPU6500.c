@@ -17,7 +17,7 @@ void MPU6500_Configuration(){
 	MPU6500_write(MPU6500_SIGNAL_PATH_RESET,0x07); 
 	HAL_Delay(100);
 	
-	MPU6500_write(MPU6500_PWR_MGMT_2,0x00); //0x3F disable Gyro,ACC
+	MPU6500_write(MPU6500_PWR_MGMT_2,0x3F); //0x3F disable Gyro,ACC
 	
 	/***************************************
 	Resrt  DMP , FIFO , I2C_MST , SIG_COND
@@ -60,7 +60,7 @@ void MPU6500_Configuration(){
 	MPU6500_write( 0x1700, 0x7F ); 
 	MPU6500_write( 0x1800, 0xFF ); 
 
-	SPI_Configuration(SPI_BAUDRATEPRESCALER_8);	//Set PCLK1 = 84Mhz / 8 = 10.5Mhz
+	SPI_Configuration(SPI_BAUDRATEPRESCALER_128);	//Set PCLK1 = 84Mhz / 8 = 10.5Mhz
 	__HAL_SPI_ENABLE(&hspi1);
 	
 	MPU6500_delay_EN=DISABLE;

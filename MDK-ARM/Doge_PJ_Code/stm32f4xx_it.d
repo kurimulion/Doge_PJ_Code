@@ -34,3 +34,5 @@ doge_pj_code\stm32f4xx_it.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_t
 doge_pj_code\stm32f4xx_it.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 doge_pj_code\stm32f4xx_it.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
 doge_pj_code\stm32f4xx_it.o: ../Inc/stm32f4xx_it.h
+doge_pj_code\stm32f4xx_it.o: ../Inc/MPU6500.h
+doge_pj_code\stm32f4xx_it.o: ../Inc/short_type.h
