@@ -18,7 +18,7 @@ void MPU6500_Configuration(){
 	HAL_Delay(100);
 	
 	MPU6500_write(MPU6500_PWR_MGMT_2,0x00); //0x3F disable Gyro,ACC
-	
+	MPU6500_write(MPU6500_FIFO_Enable,0x00); 
 	/***************************************
 	Resrt  DMP , FIFO , I2C_MST , SIG_COND
 	Set SPI interface only
@@ -33,7 +33,7 @@ void MPU6500_Configuration(){
 	/***************************************
 	Set Gyro 3600hz bandwidth, 8khz Fs
 	****************************************/
-	MPU6500_write(MPU6500_Config,0x07); 
+	MPU6500_write(MPU6500_Config,0x00); 
 		
 	/***************************************
   Set FCHOICE_B=0, Gyro Full Scale +-2000dps , Gyro self-test off
