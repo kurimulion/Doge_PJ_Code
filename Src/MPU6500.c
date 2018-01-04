@@ -30,10 +30,11 @@ void MPU6500_Configuration(){
 		printf("communication fail\r\n");
 	}
 		
+	MPU6500_write(MPU6500_FIFO_Enable,0x00); 
 	/***************************************
 	Set Gyro 3600hz bandwidth, 8khz Fs
 	****************************************/
-	MPU6500_write(MPU6500_Config,0x07); 
+	MPU6500_write(MPU6500_Config,0x00); 
 		
 	/***************************************
   Set FCHOICE_B=0, Gyro Full Scale +-2000dps , Gyro self-test off
@@ -53,12 +54,16 @@ void MPU6500_Configuration(){
 	/***************************************
   Set six Axis offset to 32767(0x7FFF)
 	****************************************/
-	MPU6500_write( 0x1300, 0x7F ); 
-	MPU6500_write( 0x1400, 0xFF ); 
-	MPU6500_write( 0x1500, 0x7F ); 
-	MPU6500_write( 0x1600, 0xFF ); 
+//	MPU6500_write( 0x1300, 0x7F ); 
+//	MPU6500_write( 0x1400, 0xFF ); 
+//	MPU6500_write( 0x1500, 0x7F ); 
+//	MPU6500_write( 0x1600, 0xFF ); 
 	MPU6500_write( 0x1700, 0x7F ); 
 	MPU6500_write( 0x1800, 0xFF ); 
+//	MPU6500_write( 0x7700, 0x27 ); 
+//	MPU6500_write( 0x7800, 0x10 ); 
+//	MPU6500_write( 0x7A00, 0x27 ); 
+//	MPU6500_write( 0x7B00, 0x10 ); 
 
 	SPI_Configuration(SPI_BAUDRATEPRESCALER_8);	//Set PCLK1 = 84Mhz / 8 = 10.5Mhz
 	__HAL_SPI_ENABLE(&hspi1);
