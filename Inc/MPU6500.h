@@ -1,8 +1,8 @@
 #include "stm32f4xx_hal.h"
 #include "short_type.h"
 
-#define CS_L HAL_GPIO_WritePin(GPIOA,GPIO_PIN_15,GPIO_PIN_RESET)
-#define CS_H HAL_GPIO_WritePin(GPIOA,GPIO_PIN_15,GPIO_PIN_SET)
+#define CS_L HAL_GPIO_WritePin(GPIOA,GPIO_PIN_4,GPIO_PIN_RESET)
+#define CS_H HAL_GPIO_WritePin(GPIOA,GPIO_PIN_4,GPIO_PIN_SET)
 ;
 #define MPU6500_PWR_MGMT_1 				0x6B00
 #define MPU6500_PWR_MGMT_2 				0x6C00

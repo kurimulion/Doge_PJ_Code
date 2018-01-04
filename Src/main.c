@@ -106,7 +106,7 @@ int main(void)
   MX_I2C1_Init();
   MX_SPI1_Init();
   MX_TIM5_Init();
-// MX_TIM11_Init();
+  MX_TIM11_Init();
   MX_USART1_UART_Init();
   MX_USART2_UART_Init();
   MX_TIM10_Init();
@@ -125,6 +125,11 @@ int main(void)
   /* USER CODE END WHILE */
 
   /* USER CODE BEGIN 3 */
+//	printf("%d\t%d\t%d\r\n",(MPU6500_read(0x3B00)<<8)+MPU6500_read(0x3C00)+10000
+//	,(MPU6500_read(0x3D00)<<8)+MPU6500_read(0x3E00)+10000,(MPU6500_read(0x3F00)<<8)+MPU6500_read(0x4000)+10000);
+printf("%d\t%d\t%d\r\n",(MPU6500_read(0x4300)<<8)+MPU6500_read(0x4400)+10000
+,(MPU6500_read(0x4500)<<8)+MPU6500_read(0x4600)+10000,(MPU6500_read(0x4700)<<8)+MPU6500_read(0x4800)+10000);
+		HAL_Delay(100);
   }
   /* USER CODE END 3 */
 
