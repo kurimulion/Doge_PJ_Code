@@ -18,7 +18,6 @@ void MPU6500_Configuration(){
 	HAL_Delay(100);
 	
 	MPU6500_write(MPU6500_PWR_MGMT_2,0x00); //0x3F disable Gyro,ACC
-	MPU6500_write(MPU6500_FIFO_Enable,0x00); 
 	/***************************************
 	Resrt  DMP , FIFO , I2C_MST , SIG_COND
 	Set SPI interface only
@@ -29,7 +28,7 @@ void MPU6500_Configuration(){
 	while(MPU6500_read(MPU6500_WHOAMI)!=0x0070){
 		printf("communication fail\r\n");
 	}
-		
+	MPU6500_write(MPU6500_FIFO_Enable,0x00); 
 	/***************************************
 	Set Gyro 3600hz bandwidth, 8khz Fs
 	****************************************/
